@@ -1,9 +1,12 @@
 import React from 'react';
 
-const Total = ({ task1, task2, task3 }) => {
+const Total = (props) => {
+  const total = props.tasks.reduce((acc, rec) => {
+    return acc + rec.task;
+  }, 0);
   return (
     <div>
-      <p>Общее количество заданий {task1 + task2 + task3}</p>
+      <p>Общее количество заданий = {total}</p>
     </div>
   );
 };
